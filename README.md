@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# tasklist
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the tasklist repository! This repository is designed to help you keep track of your tasks and stay organized. 
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Task creation: Easily create new tasks with a title, description, and due date.
+- Task management: Mark tasks as complete, update task details, and delete tasks.
+- Task filtering: Filter tasks based on their status (completed, pending) or due date.
+- Task prioritization: Assign priority levels to tasks to help you focus on what's important.
+- Task reminders: Receive reminders for upcoming tasks to ensure you never miss a deadline.
 
-### `npm start`
+## Explanation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Backend: Implements CRUD operations using Express.js and Mongoose with MongoDB. The taskController.js handles all CRUD operations (getAllTasks, createTask, getTaskById, updateTask, deleteTask). Routes are defined in taskRoutes.js and used in app.js to manage API endpoints (/tasks).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Frontend: Uses React.js for UI components (TaskList, TaskItem, TaskForm). TaskList fetches tasks from the backend (axios), provides filtering options (all, completed, incomplete), and passes down CRUD operations (addTask, updateTask, deleteTask) to child components (TaskItem, TaskForm). TaskItem handles task editing (handleUpdate), deletion (handleDelete), and completion toggling (toggleCompleted). TaskForm handles task creation (handleSubmit).
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To get started with the tasklist application, follow these steps:
 
-### `npm run build`
+1. Clone the repository: `git clone https://github.com/your-username/tasklist.git`
+2. Install the required dependencies: `npm install`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Running the Application
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Start MongoDB: `mongod`
+2. Start Backend Server: 
+    ```
+    cd backend
+    node app.js
+    ```
+3. Start Frontend Server:
+    ```
+    cd frontend
+    npm start
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributing
 
-### `npm run eject`
+Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request. 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## License
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Happy task tracking!
